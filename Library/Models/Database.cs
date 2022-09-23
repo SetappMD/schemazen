@@ -693,7 +693,7 @@ where type = 'R'
 				fk.IsSystemNamed = (bool)dr["is_system_named"];
 			}
 		}
-`
+
 		//get foreign key columns and ref table
 		cm.CommandText = @"
 select
