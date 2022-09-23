@@ -693,7 +693,7 @@ where type = 'R'
 				fk.IsSystemNamed = (bool)dr["is_system_named"];
 			}
 		}
-
+`
 		//get foreign key columns and ref table
 		cm.CommandText = @"
 select
@@ -1376,7 +1376,7 @@ where name = @dbname
 	public void ImportData(Action<TraceLevel, string> log = null) {
 		if (log == null) log = (tl, s) => { };
 
-		var dataDir = Dir + "\\data";
+		var dataDir = Dir + "/data";
 		if (!Directory.Exists(dataDir)) {
 			log(TraceLevel.Verbose, "No data to import.");
 			return;
