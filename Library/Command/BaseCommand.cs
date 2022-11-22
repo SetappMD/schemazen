@@ -42,7 +42,8 @@ public abstract class BaseCommand {
 			IntegratedSecurity = string.IsNullOrEmpty(User),
 			//setting up pooling false to avoid re-use of connection while using the library.
 			//http://www.c-sharpcorner.com/article/understanding-connection-pooling/
-			Pooling = false
+			Pooling = false,
+			ConnectTimeout = 360
 		};
 		if (!builder.IntegratedSecurity) {
 			builder.UserID = User;
