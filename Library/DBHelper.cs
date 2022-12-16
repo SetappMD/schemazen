@@ -15,6 +15,7 @@ public class DBHelper {
 			cn.Open();
 			using (var cm = cn.CreateCommand()) {
 				cm.CommandText = sql;
+				cm.CommandTimeout = 360;
 				cm.ExecuteNonQuery();
 			}
 		}
