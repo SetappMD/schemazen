@@ -210,6 +210,7 @@ public class Table : INameable, IHasOwner, IScriptable {
 			       conn,
 			       SqlBulkCopyOptions.KeepIdentity | SqlBulkCopyOptions.KeepNulls |
 			       SqlBulkCopyOptions.TableLock)) {
+			bulk.BulkCopyTimeout = 360;
 			foreach (var colName in dt.Columns.OfType<DataColumn>().Select(c => c.ColumnName))
 				bulk.ColumnMappings.Add(colName, colName);
 			bulk.DestinationTableName = $"[{Owner}].[{Name}]";
